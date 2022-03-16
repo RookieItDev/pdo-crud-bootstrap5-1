@@ -17,7 +17,8 @@ if (isset($_GET['delete'])) {
 }
 
 ?>
-    <!-- modal -->
+<div class="container-fluid">
+    <div class="container-fluid my-2">
     <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -45,8 +46,10 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
     </div>
+    </div>
+ <!-- modal -->
+
     <!-- end modal -->
-<div class="container-fluid m-5">
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo">Add User</button>
     <hr>
 
