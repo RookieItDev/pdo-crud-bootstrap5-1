@@ -56,7 +56,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="img" class="col-form-label">Image:</label>
-                    <input type="file" required class="form-control" id="imgInput" name="img">
+                    <input type="file"  class="form-control" id="imgInput" name="img">
                     <img loading="lazy" width="100%" id="previewImg" alt="">
                 </div>
 
@@ -76,7 +76,9 @@
             <div class="col-md-6">
                 <h1>CRUD Bootstrap 5</h1>
             </div>
-            <div class="col-md-6 d-flex justify-content-end">
+            <div class="col text text-end">
+                <a class="btn btn-secondary" href="report.php">Report</a></div>
+            <div class="col">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo">Add User</button>
             </div>
         </div>

@@ -31,7 +31,12 @@ ob_start();
 </head>
 <body>
   <div class="container-fluid">
-  <table class="table" style="border: 1;">
+      <p>My Report Demo</p>
+      <?php 
+      for($i=0;$i<2;$i++)
+      {
+      ?>
+  <table class="table table-bordered print" style="border: 1;">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -42,7 +47,7 @@ ob_start();
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="border: 1;">
                 <?php 
                     $stmt = $conn->query("SELECT * FROM users");
                     $stmt->execute();
@@ -53,7 +58,7 @@ ob_start();
                     } else {
                     foreach($users as $user)  {  
                 ?>
-                    <tr>
+                    <tr style="border: 1;">
                         <th scope="row"><?php echo $user['id']; ?></th>
                         <td><?php echo $user['firstname']; ?></td>
                         <td><?php echo $user['lastname']; ?></td>
@@ -67,15 +72,20 @@ ob_start();
                 <?php }  } ?>
             </tbody>
             </table>
+            <p style="page-break-after: always;"></p>
+            <?php } ?>
   </div>
 </body>
 </html>
 <?php
 // Now collect the output buffer into a variable
+//$html->Ln();
 $html = ob_get_contents();
 ob_end_clean();
 
 // send the captured HTML from the output buffer to the mPDF class for processing
+
 $mpdf->WriteHTML($html);
+
 $mpdf->Output();
 ?>
