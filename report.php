@@ -13,7 +13,6 @@
          $_SESSION['success'] = "Data has been deleted succesfully";
          header("refresh:1; url=index.php");
      }
-     
  }
 // Require composer autoload
 require_once __DIR__ . '/vendor/autoload.php';
@@ -31,11 +30,12 @@ ob_start();
 </head>
 <body>
   <div class="container-fluid">
-      <p>My Report Demo</p>
+      
       <?php 
       for($i=0;$i<2;$i++)
       {
       ?>
+      <p>My Report Demo</p>
   <table class="table table-bordered print" style="border: 1;">
             <thead>
                 <tr>
@@ -82,10 +82,7 @@ ob_start();
 //$html->Ln();
 $html = ob_get_contents();
 ob_end_clean();
-
 // send the captured HTML from the output buffer to the mPDF class for processing
-
 $mpdf->WriteHTML($html);
-
 $mpdf->Output();
 ?>
